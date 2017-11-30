@@ -1,13 +1,14 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
 
 class ListTodo extends React.Component {
   render() {
+      console.log("THISPOIRSS", this.props);
     return (
         <View style={styles.container}>
-            {todos.map((data, index) => {
-                console.log("Data");
+            {this.props.todo.map((data, index) => {
+                <Text>{data}</Text>
             })}
         </View>  
     );
@@ -16,12 +17,12 @@ class ListTodo extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: '1'
+        flex: 1
     }
 });
 
-const stateToProps = (state) => {
-    todos: state.todos
-}
+const mapStateToProps = ({ todos }) => ({
+    todo: todos
+});
 
-export default connect(stateToProps)(ListTodo)
+export default connect(mapStateToProps)(ListTodo);
