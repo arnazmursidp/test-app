@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import { connect } from 'react-redux';
 import { addTodo } from './actions/addTodoAction';
 
-export default class AddTodo extends React.Component {
+class AddTodo extends React.Component {
   render() {
     var texts = '';
     return (
@@ -17,7 +17,7 @@ export default class AddTodo extends React.Component {
                 />
                 <TouchableOpacity 
                     style={{ marginTop: 20, marginLeft: 10, backgroundColor: 'black' }}
-                    onPress={() => {}}
+                    onPress={() => {addTodo(texts)}}
                 >
                     <Text style={{ color: 'white', padding: 15 }}>Submit</Text>
                 </TouchableOpacity>
@@ -41,3 +41,5 @@ const styles = StyleSheet.create({
         borderColor: 'black'
     }
 });
+
+export default connect()(AddTodo)
