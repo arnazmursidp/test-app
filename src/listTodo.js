@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 class ListTodo extends React.Component {
   render() {
-      console.log("THISPOIRSS", this.props);
     return (
         <View style={styles.container}>
             {this.props.todo.map((data, index) => {
