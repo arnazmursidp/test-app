@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import { addTodo } from './actions/addTodoAction';
 
 export default class AddTodo extends React.Component {
   render() {
